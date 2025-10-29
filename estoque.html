@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Controle de Estoque — EASYGEST</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="#8FB3E2"/>
+          <path d="M8 16L14 10L20 16L26 10" stroke="#1E2E4F" stroke-width="2" stroke-linecap="round"/>
+          <path d="M8 22L14 16L20 22L26 16" stroke="#1E2E4F" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>EASYGEST</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item" aria-label="Dashboard">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+        </svg>
+        <span>Dashboard</span>
+      </a>
+      <a href="relatorios.html" class="nav-item" aria-label="Relatórios">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+        </svg>
+        <span>Relatórios</span>
+      </a>
+      <a href="produtos.html" class="nav-item" aria-label="Produtos">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
+        </svg>
+        <span>Produtos</span>
+      </a>
+      <a href="clientes.html" class="nav-item" aria-label="Clientes">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+        </svg>
+        <span>Clientes</span>
+      </a>
+      <a href="estoque.html" class="nav-item active" aria-label="Estoque">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM13 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2z"/>
+        </svg>
+        <span>Estoque</span>
+      </a>
+      <a href="financeiro.html" class="nav-item" aria-label="Financeiro">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
+        </svg>
+        <span>Financeiro</span>
+      </a>
+      <a href="configuracoes.html" class="nav-item" aria-label="Configurações">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+        </svg>
+        <span>Configurações</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Topbar -->
+    <header class="topbar">
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <div class="search-box">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Buscar produto... (pressione '/')" aria-label="Buscar produto">
+      </div>
+      <div class="period-selector">
+        <button class="period-btn active" data-period="today">Hoje</button>
+        <button class="period-btn" data-period="7d">7 dias</button>
+        <button class="period-btn" data-period="30d">30 dias</button>
+        <button class="period-btn" data-period="custom">Personalizado</button>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <main class="content">
+      <!-- Header Card + Tabela -->
+      <div class="table-card">
+        <div class="card-header">
+          <h3>Controle de Estoque</h3>
+          <button class="btn-secondary" id="exportCSVBtn" aria-label="Exportar CSV">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd"/>
+            </svg>
+            Exportar CSV
+          </button>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table" aria-label="Lista de estoque">
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Produto</th>
+                <th>Estoque atual</th>
+                <th>Mínimo</th>
+                <th>Status</th>
+                <th>Pedido</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="estoqueTableBody">
+              <!-- linhas serão inseridas via script -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <button class="pagination-btn" disabled>Anterior</button>
+          <span class="pagination-info">Página 1 de 1</span>
+          <button class="pagination-btn" disabled>Próximo</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Modal Ajustar Estoque -->
+  <div class="modal-overlay" id="modalAjustar" role="dialog" aria-modal="true" aria-labelledby="modalAjustarTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <span class="modal-title" id="modalAjustarTitle">Ajustar Estoque</span>
+        <button class="btn-secondary" onclick="closeModalAjustar()" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Produto</label>
+          <input class="form-input" id="ajustarProduto" type="text" readonly />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tipo de operação</label>
+          <div style="display:flex; gap:16px;">
+            <label style="display:flex; align-items:center; gap:8px;">
+              <input type="radio" name="ajustarTipo" value="add" checked />
+              <span>Adicionar</span>
+            </label>
+            <label style="display:flex; align-items:center; gap:8px;">
+              <input type="radio" name="ajustarTipo" value="sub" />
+              <span>Remover</span>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="ajustarQtd">Quantidade</label>
+          <input class="form-input" id="ajustarQtd" type="number" min="1" placeholder="Ex.: 10" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="ajustarObs">Observação</label>
+          <textarea class="form-textarea" id="ajustarObs" placeholder="Motivo do ajuste..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModalAjustar()">Cancelar</button>
+        <button class="btn btn-primary" onclick="confirmarAjuste()">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Solicitar Reposição -->
+  <div class="modal-overlay" id="modalSolicitar" role="dialog" aria-modal="true" aria-labelledby="modalSolicitarTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <span class="modal-title" id="modalSolicitarTitle">Solicitar Reposição</span>
+        <button class="btn-secondary" onclick="closeModalSolicitar()" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Produto</label>
+          <input class="form-input" id="solicitarProduto" type="text" readonly />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="solicitarQtd">Quantidade a repor</label>
+          <input class="form-input" id="solicitarQtd" type="number" min="1" placeholder="Ex.: 20" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="solicitarContato">Contato do fornecedor</label>
+          <input class="form-input" id="solicitarContato" type="text" placeholder="E-mail ou WhatsApp" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="solicitarObs">Observação</label>
+          <textarea class="form-textarea" id="solicitarObs" placeholder="Informações adicionais..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModalSolicitar()">Cancelar</button>
+        <button class="btn btn-success" onclick="confirmarSolicitacao()">Solicitar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Cancelar Reposição -->
+  <div class="modal-overlay" id="modalCancelar" role="dialog" aria-modal="true" aria-labelledby="modalCancelarTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <span class="modal-title" id="modalCancelarTitle">Cancelar Reposição</span>
+        <button class="btn-secondary" onclick="closeModalCancelar()" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Produto</label>
+          <input class="form-input" id="cancelarProduto" type="text" readonly />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cancelarJustificativa">Justificativa</label>
+          <textarea class="form-textarea" id="cancelarJustificativa" placeholder="Motivo do cancelamento..." required></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModalCancelar()">Voltar</button>
+        <button class="btn btn-danger" onclick="confirmarCancelamento()">Cancelar Pedido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart.js (mantendo padrão do portal) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <!-- Base do portal (toasts, atalho '/', toggle menu, etc.) -->
+  <script src="script.js"></script>
+
+  <!-- Script específico da página de Estoque -->
+  <script>
+    // Mock de dados de estoque
+    const itensEstoque = [
+      { sku: "AZ-001", produto: "Camiseta Azul M", estoque: 3, minimo: 10, pedido: false },
+      { sku: "AZ-114", produto: "Fone Bluetooth X", estoque: 2, minimo: 5, pedido: true },
+      { sku: "MR-090", produto: "Arroz 5kg", estoque: 8, minimo: 12, pedido: false },
+      { sku: "CL-442", produto: "Calça Jeans 42", estoque: 1, minimo: 6, pedido: false },
+      { sku: "EL-777", produto: "Mouse Gamer", estoque: 16, minimo: 8, pedido: false },
+      { sku: "AL-501", produto: "Café 500g", estoque: 5, minimo: 10, pedido: true }
+    ];
+
+    let currentSKU = null; // SKU do item sendo editado
+
+    // Calcular status baseado no estoque
+    function calcularStatus(item) {
+      if (item.estoque <= item.minimo) return { label: 'Crítico', class: 'critical' };
+      if (item.estoque <= item.minimo + 2) return { label: 'Alerta', class: 'warning' };
+      return { label: 'OK', class: 'success' };
+    }
+
+    // Renderizar tabela
+    function renderEstoque() {
+      const tbody = document.getElementById('estoqueTableBody');
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      
+      const filtered = itensEstoque.filter(item => 
+        item.sku.toLowerCase().includes(searchTerm) || 
+        item.produto.toLowerCase().includes(searchTerm)
+      );
+
+      tbody.innerHTML = filtered.map(item => {
+        const status = calcularStatus(item);
+        const pedidoText = item.pedido ? 'Em pedido' : '—';
+        const pedidoClass = item.pedido ? 'chip info' : '';
+        
+        return `
+          <tr>
+            <td><strong>${item.sku}</strong></td>
+            <td>${item.produto}</td>
+            <td>${item.estoque}</td>
+            <td>${item.minimo}</td>
+            <td><span class="chip ${status.class}">${status.label}</span></td>
+            <td><span class="${pedidoClass}">${pedidoText}</span></td>
+            <td>
+              <div class="action-buttons">
+                <button class="btn-action btn-outline" onclick="abrirModalAjustar('${item.sku}')">Ajustar</button>
+                ${!item.pedido 
+                  ? `<button class="btn-action btn-primary" onclick="abrirModalSolicitar('${item.sku}')">Solicitar</button>`
+                  : `<button class="btn-action btn-danger" onclick="abrirModalCancelar('${item.sku}')">Cancelar</button>`
+                }
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // Modal Ajustar Estoque
+    function abrirModalAjustar(sku) {
+      currentSKU = sku;
+      const item = itensEstoque.find(i => i.sku === sku);
+      document.getElementById('ajustarProduto').value = `${item.sku} - ${item.produto}`;
+      document.getElementById('ajustarQtd').value = '';
+      document.getElementById('ajustarObs').value = '';
+      document.querySelector('input[name="ajustarTipo"][value="add"]').checked = true;
+      document.getElementById('modalAjustar').style.display = 'flex';
+    }
+
+    function closeModalAjustar() {
+      document.getElementById('modalAjustar').style.display = 'none';
+      currentSKU = null;
+    }
+
+    function confirmarAjuste() {
+      const item = itensEstoque.find(i => i.sku === currentSKU);
+      const tipo = document.querySelector('input[name="ajustarTipo"]:checked').value;
+      const qtd = parseInt(document.getElementById('ajustarQtd').value || '0', 10);
+      
+      if (qtd <= 0) {
+        showToast('Informe uma quantidade válida.', 'error');
+        return;
+      }
+
+      if (tipo === 'add') {
+        item.estoque += qtd;
+      } else {
+        item.estoque = Math.max(0, item.estoque - qtd);
+      }
+
+      renderEstoque();
+      closeModalAjustar();
+      showToast('Ajuste registrado!');
+    }
+
+    // Modal Solicitar Reposição
+    function abrirModalSolicitar(sku) {
+      currentSKU = sku;
+      const item = itensEstoque.find(i => i.sku === sku);
+      document.getElementById('solicitarProduto').value = `${item.sku} - ${item.produto}`;
+      document.getElementById('solicitarQtd').value = '';
+      document.getElementById('solicitarContato').value = '';
+      document.getElementById('solicitarObs').value = '';
+      document.getElementById('modalSolicitar').style.display = 'flex';
+    }
+
+    function closeModalSolicitar() {
+      document.getElementById('modalSolicitar').style.display = 'none';
+      currentSKU = null;
+    }
+
+    function confirmarSolicitacao() {
+      const item = itensEstoque.find(i => i.sku === currentSKU);
+      const qtd = parseInt(document.getElementById('solicitarQtd').value || '0', 10);
+      const contato = document.getElementById('solicitarContato').value.trim();
+
+      if (qtd <= 0 || !contato) {
+        showToast('Preencha quantidade e contato do fornecedor.', 'error');
+        return;
+      }
+
+      item.pedido = true;
+      renderEstoque();
+      closeModalSolicitar();
+      showToast('Pedido de reposição enviado!');
+    }
+
+    // Modal Cancelar Reposição
+    function abrirModalCancelar(sku) {
+      currentSKU = sku;
+      const item = itensEstoque.find(i => i.sku === sku);
+      document.getElementById('cancelarProduto').value = `${item.sku} - ${item.produto}`;
+      document.getElementById('cancelarJustificativa').value = '';
+      document.getElementById('modalCancelar').style.display = 'flex';
+    }
+
+    function closeModalCancelar() {
+      document.getElementById('modalCancelar').style.display = 'none';
+      currentSKU = null;
+    }
+
+    function confirmarCancelamento() {
+      const justificativa = document.getElementById('cancelarJustificativa').value.trim();
+      
+      if (!justificativa) {
+        showToast('Informe a justificativa do cancelamento.', 'error');
+        return;
+      }
+
+      const item = itensEstoque.find(i => i.sku === currentSKU);
+      item.pedido = false;
+      renderEstoque();
+      closeModalCancelar();
+      showToast('Reposição cancelada.');
+    }
+
+    // Exportar CSV
+    function exportarCSV() {
+      const headers = ['SKU', 'Produto', 'Estoque', 'Mínimo', 'Pedido'];
+      const rows = itensEstoque.map(item => [
+        item.sku,
+        item.produto,
+        item.estoque,
+        item.minimo,
+        item.pedido ? 'Em pedido' : 'Não'
+      ]);
+
+      let csvContent = headers.join(',') + '\n';
+      rows.forEach(row => {
+        csvContent += row.map(cell => `"${cell}"`).join(',') + '\n';
+      });
+
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'estoque_easygest.csv';
+      link.click();
+      
+      showToast('CSV exportado com sucesso!');
+    }
+
+    // Busca em tempo real
+    document.getElementById('searchInput').addEventListener('input', renderEstoque);
+
+    // Botão exportar CSV
+    document.getElementById('exportCSVBtn').addEventListener('click', exportarCSV);
+
+    // Fechar modais ao clicar fora
+    document.getElementById('modalAjustar').addEventListener('click', (e) => {
+      if (e.target.id === 'modalAjustar') closeModalAjustar();
+    });
+    document.getElementById('modalSolicitar').addEventListener('click', (e) => {
+      if (e.target.id === 'modalSolicitar') closeModalSolicitar();
+    });
+    document.getElementById('modalCancelar').addEventListener('click', (e) => {
+      if (e.target.id === 'modalCancelar') closeModalCancelar();
+    });
+
+    // Inicialização
+    (function initEstoque() {
+      renderEstoque();
+    })();
+  </script>
+</body>
+</html>
