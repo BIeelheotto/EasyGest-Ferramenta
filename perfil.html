@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Relatório de Vendas por Período — EASYGEST</title>
+  <title>Meu Perfil - EASYGEST</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Sidebar -->
-  <aside class="sidebar">
+<aside class="sidebar">
   <div class="sidebar-header">
       <a href="/" class="logo-link" aria-label="Página inicial EasyGest">
       <div class="logo-box">
@@ -31,7 +30,7 @@
       <span>Dashboard</span>
     </a>
 
-    <a href="relatorios.html" class="nav-item active" aria-label="Relatórios">
+    <a href="relatorios.html" class="nav-item" aria-label="Relatórios">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
         <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
       </svg>
@@ -86,7 +85,7 @@
       <span>Configurações</span>
     </a>
 
-    <a href="perfil.html" class="nav-item avatar-item" aria-label="Meu Perfil">
+    <a href="perfil.html" class="nav-item avatar-item active" aria-label="Meu Perfil">
       <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%238FB3E2'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='Inter, sans-serif' font-size='12' font-weight='600' fill='%231E2E4F'>MP</text></svg>" alt="Avatar do usuário" class="avatar-img" />
       <span>Meu Perfil</span>
     </a>
@@ -95,84 +94,130 @@
 
   <!-- Main Content -->
   <div class="main-content">
-    <!-- Topbar -->
     <header class="topbar">
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
-      <div class="topbar-title">
-        <a href="relatorios.html" class="back-link">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-            Voltar para Relatórios
-        </a>
-        <h2>Vendas por Período</h2>
-      </div>
-      <div class="period-selector">
-        <button class="period-btn active" data-period="today">Hoje</button>
-        <button class="period-btn" data-period="7d">7 dias</button>
-        <button class="period-btn" data-period="30d">30 dias</button>
-        <button class="period-btn" data-period="custom">Personalizado</button>
-      </div>
-      <div class="custom-filters" id="customFilters" style="display: none;">
-        <div class="filter-group">
-            <label for="specificDay">Dia específico:</label>
-            <input type="date" id="specificDay" class="form-control">
-        </div>
-        <div class="filter-group">
-            <label for="specificMonth">Mês específico:</label>
-            <input type="month" id="specificMonth" class="form-control">
-        </div>
-        <button class="btn-secondary" id="applyCustomFilter">Aplicar</button>
-      </div>
-       <button class="btn-primary" id="exportPdf">Exportar PDF</button>
+      <div class="search-box" style="visibility: hidden;"></div>
+      <div></div>
     </header>
 
-    <!-- Content -->
     <main class="content">
-      <!-- KPIs -->
-      <div class="kpi-grid" id="reportKpiGrid">
-        <!-- KPIs serão inseridos via JS -->
-      </div>
+      <section class="card" style="max-width: 680px;">
+        <h2>Dados Pessoais</h2>
+        <form id="perfilForm" class="form-grid">
+          <div class="field">
+            <label>Nome completo</label>
+            <input type="text" id="nome" required>
+          </div>
+          <div class="field">
+            <label>E-mail corporativo</label>
+            <input type="email" id="email" readonly>
+          </div>
+          <div class="field">
+            <label>Cargo / Função</label>
+            <input type="text" id="cargo" readonly>
+          </div>
+          <div class="field">
+            <label>Último acesso</label>
+            <input type="text" id="ultimoAcesso" readonly>
+          </div>
+          <div class="field" style="grid-column: 1/-1;">
+            <label>Avatar (URL)</label>
+            <input type="url" id="avatar" placeholder="https://...">
+          </div>
+          <div class="actions" style="grid-column: 1/-1; text-align:right;">
+            <button type="button" class="btn-outline" onclick="history.back()">Cancelar</button>
+            <button type="submit" class="btn-primary">Salvar</button>
+          </div>
+        </form>
+      </section>
 
-      <!-- Gráfico -->
-      <div class="chart-card" style="height: 400px; margin-bottom: 24px;">
-        <canvas id="vendasPeriodoChart"></canvas>
-      </div>
-
-      <!-- Tabela de Dados -->
-      <div class="table-card">
-        <div class="card-header">
-          <h3>Dados Detalhados</h3>
+      <section class="card" style="max-width: 680px; margin-top: 24px;">
+        <h2>Segurança</h2>
+        <div class="list-item">
+          <div>
+            <div class="list-item-title">Senha</div>
+            <div class="list-item-meta">Alterada há 45 dias</div>
+          </div>
+          <button class="btn-action btn-outline" onclick="abrirModalSenha()">Alterar</button>
         </div>
-        <div class="table-wrapper">
-          <table class="data-table" id="vendasTable">
-            <thead>
-              <tr>
-                <th>Data</th>
-                <th>Produto/Serviço</th>
-                <th>Cliente</th>
-                <th>Valor (R$)</th>
-              </tr>
-            </thead>
-            <tbody id="vendasTableBody">
-              <!-- Dados da tabela serão inseridos via JS -->
-            </tbody>
-          </table>
+        <div class="list-item">
+          <div>
+            <div class="list-item-title">Autenticação em dois fatores (2FA)</div>
+            <div class="list-item-meta">Desativado</div>
+          </div>
+          <button class="btn-action btn-outline" onclick="ativar2FA()">Ativar</button>
         </div>
-      </div>
+      </section>
     </main>
   </div>
 
-  <!-- Toast -->
-  <div class="toast-container" id="toastContainer"></div>
+  <!-- Modal troca de senha -->
+  <dialog id="modalSenha" class="modal">
+    <form id="formSenha" method="dialog" class="modal-content">
+      <h3>Alterar senha</h3>
+      <div class="field">
+        <label>Senha atual</label>
+        <input type="password" id="senhaAtual" required minlength="4">
+      </div>
+      <div class="field">
+        <label>Nova senha</label>
+        <input type="password" id="novaSenha" required minlength="4">
+      </div>
+      <div class="field">
+        <label>Repita a nova senha</label>
+        <input type="password" id="confSenha" required minlength="4">
+      </div>
+      <div class="actions">
+        <button type="button" class="btn-outline" onclick="fecharModalSenha()">Cancelar</button>
+        <button type="submit" class="btn-primary">Confirmar</button>
+      </div>
+    </form>
+  </dialog>
 
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <!-- Base do portal -->
   <script src="script.js"></script>
-  <!-- Script específico da página -->
-  <script src="relatorio-vendas.js"></script>
+  <script>
+    // Mock do usuário logado (substituir por JWT / API)
+    const usuario = {
+      id: 1,
+      nome: "Igor Orlando",
+      email: "igor@easygest.com.br",
+      cargo: "Administrador",
+      ultimoAcesso: "02/12/2025 08:14",
+      avatar: ""
+    };
+
+    // Preenche campos
+    Object.keys(usuario).forEach(k => {
+      const el = document.getElementById(k);
+      if(el) el.value = usuario[k];
+    });
+
+    // Salvar alterações simples (nome / avatar)
+    document.getElementById('perfilForm').addEventListener('submit', e => {
+      e.preventDefault();
+      showToast('Dados salvos com sucesso!', 'success');
+    });
+
+    // Modal senha
+    function abrirModalSenha()  { document.getElementById('modalSenha').showModal(); }
+    function fecharModalSenha() { document.getElementById('modalSenha').close(); }
+
+    document.getElementById('formSenha').addEventListener('submit', e => {
+      e.preventDefault();
+      const nova = document.getElementById('novaSenha').value;
+      const conf = document.getElementById('confSenha').value;
+      if(nova !== conf) return showToast('As novas senhas não coincidem.', 'danger');
+      showToast('Senha alterada com sucesso!', 'success');
+      fecharModalSenha();
+    });
+
+    function ativar2FA() {
+      showToast('Código QR gerado! Escaneie com o app autenticador.', 'success');
+    }
+  </script>
 </body>
 </html>
