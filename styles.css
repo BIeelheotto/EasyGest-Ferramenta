@@ -16,7 +16,13 @@
     --warning: #F59E0B;
     --danger: #EF4444;
     --border: #E5E7EB;
-    --shadow: 0 6px 20px rgba(0,0,0,.06);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.12);
+
+    --text-disabled: #9CA3AF;
+    --bg-hover: #F9FAFB;
     --sidebar-width: 260px;
 }
 
@@ -56,8 +62,9 @@ button {
     background: linear-gradient(180deg, var(--nav-start) 0%, var(--nav-end) 100%);
     color: white;
     z-index: 1000;
-    overflow-y: auto;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar-header {
@@ -75,6 +82,21 @@ button {
 
 .sidebar-nav {
     padding: 16px 12px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.sidebar-footer {
+    padding: 16px 12px;
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.avatar-item {
+    cursor: pointer;
+}
+
+.avatar-img {
+    border-radius: 50%;
 }
 
 .nav-item {
@@ -119,7 +141,7 @@ button {
     display: flex;
     align-items: center;
     gap: 24px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -212,7 +234,7 @@ button {
     background: var(--surface);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md);
 }
 
 .kpi-label {
@@ -275,7 +297,7 @@ button {
     background: var(--surface);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md);
 }
 
 .chart-card h3 {
@@ -300,7 +322,7 @@ button {
 .table-card {
     background: var(--surface);
     border-radius: 12px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md);
     overflow: hidden;
 }
 
@@ -481,7 +503,7 @@ button {
     background: var(--surface);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md);
 }
 
 .info-card h3 {
@@ -757,4 +779,221 @@ a:focus-visible {
         width: 100%;
         justify-content: center;
     }
+}
+
+/* ======================
+   PÁGINA DE RELATÓRIOS
+   ====================== */
+
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.report-card {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.report-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.report-icon {
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.report-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.report-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ======================
+   PÁGINA DE RELATÓRIOS
+   ====================== */
+
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.report-card {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.report-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.report-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.report-icon {
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.report-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.report-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.report-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* Responsive adjustments for report grid */
+@media (max-width: 768px) {
+    .report-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* ======================
+   PÁGINA DE RELATÓRIO INDIVIDUAL
+   ====================== */
+
+.topbar-title {
+    flex-grow: 1;
+}
+
+.topbar-title h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 4px;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--text-primary);
+}
+
+#exportPdf {
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+/* Remove a margem inferior do valor do KPI quando não há rodapé */
+#reportKpiGrid .kpi-value {
+    margin-bottom: 0;
+}
+
+/* Alinha a última coluna da tabela de dados (valores) à direita */
+.data-table th:last-child,
+.data-table td:last-child {
+    text-align: right;
+}
+
+/* ======================
+   FILTROS PERSONALIZADOS
+   ====================== */
+
+.custom-filters {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--bg);
+    padding: 12px;
+    border-radius: 8px;
+    margin-left: 16px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.form-control {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text-primary);
+}
+
+.logo-link {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    height: 32px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+.logo-text .easy {
+    font-weight: 400;
 }

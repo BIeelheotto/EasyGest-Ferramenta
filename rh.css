@@ -1,0 +1,153 @@
+/* ======================
+   RH Page Specific Styles
+   ====================== */
+
+/* Grid de Módulos de RH */
+.rh-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.rh-card {
+    background: var(--surface);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.rh-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    border-color: var(--accent);
+}
+
+.rh-card-icon {
+    margin-bottom: 16px;
+    color: var(--primary-600);
+}
+
+.rh-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.rh-card-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Estilos das Seções Internas (escondidas por padrão) */
+.rh-section {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.rh-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.rh-section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Estilos para o pipeline de recrutamento */
+.recruitment-pipeline {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 16px;
+    min-height: 400px;
+}
+
+.pipeline-column {
+    flex: 1;
+    min-width: 280px;
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.pipeline-column-title {
+    font-weight: 600;
+    padding: 8px;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+}
+
+.pipeline-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 300px;
+}
+
+.candidate-card {
+    background: var(--surface);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    cursor: grab;
+}
+
+.candidate-card:active {
+    cursor: grabbing;
+    background: var(--muted);
+}
+
+.candidate-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.candidate-role {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Estilos para upload de foto */
+.photo-upload-area {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px dashed var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    color: var(--text-secondary);
+    margin: 0 auto 16px;
+    position: relative;
+}
+.photo-upload-area:hover {
+    border-color: var(--accent);
+    background-color: var(--bg);
+}
+.photo-upload-area span {
+    font-size: 12px;
+    text-align: center;
+    padding: 4px;
+}
+#photoUpload {
+    display: none;
+}

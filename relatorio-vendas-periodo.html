@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Relatórios — EASYGEST</title>
+  <title>Relatório de Vendas por Período — EASYGEST</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -102,11 +102,12 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
-      <div class="search-box">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
-        </svg>
-        <input type="text" id="searchInput" placeholder="Buscar relatório... (pressione '/')" aria-label="Buscar relatório">
+      <div class="topbar-title">
+        <a href="relatorios.html" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            Voltar para Relatórios
+        </a>
+        <h2>Vendas por Período</h2>
       </div>
       <div class="period-selector">
         <button class="period-btn active" data-period="today">Hoje</button>
@@ -114,15 +115,52 @@
         <button class="period-btn" data-period="30d">30 dias</button>
         <button class="period-btn" data-period="custom">Personalizado</button>
       </div>
+      <div class="custom-filters" id="customFilters" style="display: none;">
+        <div class="filter-group">
+            <label for="specificDay">Dia específico:</label>
+            <input type="date" id="specificDay" class="form-control">
+        </div>
+        <div class="filter-group">
+            <label for="specificMonth">Mês específico:</label>
+            <input type="month" id="specificMonth" class="form-control">
+        </div>
+        <button class="btn-secondary" id="applyCustomFilter">Aplicar</button>
+      </div>
+       <button class="btn-primary" id="exportPdf">Exportar PDF</button>
     </header>
 
     <!-- Content -->
     <main class="content">
-      <h2 style="font-size: 24px; font-weight: 700; color: var(--text-primary); margin-bottom: 24px;">Relatórios Disponíveis</h2>
+      <!-- KPIs -->
+      <div class="kpi-grid" id="reportKpiGrid">
+        <!-- KPIs serão inseridos via JS -->
+      </div>
 
-      <!-- Grid de Relatórios -->
-      <div class="report-grid" id="reportGrid">
-        <!-- Cards serão inseridos via script -->
+      <!-- Gráfico -->
+      <div class="chart-card" style="height: 400px; margin-bottom: 24px;">
+        <canvas id="vendasPeriodoChart"></canvas>
+      </div>
+
+      <!-- Tabela de Dados -->
+      <div class="table-card">
+        <div class="card-header">
+          <h3>Dados Detalhados</h3>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table" id="vendasTable">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Produto/Serviço</th>
+                <th>Cliente</th>
+                <th>Valor (R$)</th>
+              </tr>
+            </thead>
+            <tbody id="vendasTableBody">
+              <!-- Dados da tabela serão inseridos via JS -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </main>
   </div>
@@ -130,10 +168,11 @@
   <!-- Toast -->
   <div class="toast-container" id="toastContainer"></div>
 
-  <!-- Chart.js (mantendo padrão do portal) -->
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <!-- Base do portal (toasts, atalho '/', toggle menu, etc.) -->
+  <!-- Base do portal -->
   <script src="script.js"></script>
-  
+  <!-- Script específico da página -->
+  <script src="relatorio-vendas.js"></script>
 </body>
 </html>
