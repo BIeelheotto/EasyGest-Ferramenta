@@ -546,10 +546,11 @@ function handleReportClick(event) {
 function bindInteractions() {
   // Menu toggle (mobile)
   const menuToggle = document.getElementById('menuToggle');
-  const sidebar = document.getElementById('sidebar');
+  const sidebar = document.querySelector('.sidebar');
   
   if (menuToggle && sidebar) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (event) => {
+      event.stopPropagation(); // Prevent the click from immediately closing the sidebar
       sidebar.classList.toggle('open');
     });
   }
@@ -623,6 +624,19 @@ function bindInteractions() {
 // ======================
 // Initialize App
 // ======================
+function highlightCurrentNavItem() {
+  const currentPath = window.location.pathname.split('/').pop(); // Get the current file name
+  const navItems = document.querySelectorAll('.sidebar-nav .nav-item, .sidebar-footer .nav-item');
+
+  navItems.forEach(item => {
+    item.classList.remove('active');
+    const href = item.getAttribute('href');
+    if (href && href.includes(currentPath)) {
+      item.classList.add('active');
+    }
+  });
+}
+
 function init() {
   // Delay initialization to ensure DOM is fully loaded
   setTimeout(() => {
@@ -644,6 +658,7 @@ function init() {
     if(document.getElementById('reportGrid')) {
       renderRelatorios();
     }
+    highlightCurrentNavItem(); // Highlight the current navigation item
     bindInteractions();
   }, 100);
 }

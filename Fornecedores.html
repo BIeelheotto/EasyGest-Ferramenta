@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fornecedores - EASYGEST</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+    <div class="sidebar-header">
+        <a href="/" class="logo-link" aria-label="Página inicial EasyGest">
+            <div class="logo-box">
+                <img src="img/logotipo.png" alt="EasyGest" class="logo-img">
+                <span class="logo-text"><span class="easy">Easy</span><span class="gest">Gest</span></span>
+            </div>
+        </a>
+    </div>
+
+    <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item" aria-label="Dashboard">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/></svg>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="relatorios.html" class="nav-item" aria-label="Relatórios">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+            <span>Relatórios</span>
+        </a>
+
+        <a href="produtos.html" class="nav-item" aria-label="Produtos">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+            <span>Produtos</span>
+        </a>
+
+        <a href="clientes.html" class="nav-item" aria-label="Clientes">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+            <span>Clientes</span>
+        </a>
+
+        <a href="fornecedores.html" class="nav-item" aria-label="Fornecedores">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M3 3h14v14H3z" />
+            </svg>
+            <span>Fornecedores</span>
+        </a>
+
+        <a href="prestadores.html" class="nav-item" aria-label="Prestadores de Serviço">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10 2l8 6-8 6-8-6z" />
+            </svg>
+            <span>Prestadores</span>
+        </a>
+        
+        <a href="estoque.html" class="nav-item" aria-label="Estoque">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM13 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2z"/></svg>
+            <span>Estoque</span>
+        </a>
+
+        <a href="financeiro.html" class="nav-item" aria-label="Financeiro">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"/></svg>
+            <span>Financeiro</span>
+        </a>
+
+        <a href="rh.html" class="nav-item" aria-label="RH">
+            <svg width="20" height="20" fill="currentColor"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/></svg>
+            <span>RH</span>
+        </a>
+    </nav>
+
+    <div class="sidebar-footer">
+        <a href="configuracoes.html" class="nav-item">
+            <svg width="20" height="20"><path fill-rule="evenodd" d="M11.49 3.17..."/></svg>
+            <span>Configurações</span>
+        </a>
+
+        <a href="perfil.html" class="nav-item avatar-item">
+            <img src="data:image/svg+xml;charset=UTF-8,<svg ...>" class="avatar-img">
+            <span>Meu Perfil</span>
+        </a>
+    </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+    <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            <svg width="24" height="24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        <div class="search-box">
+            <svg width="20" height="20" fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" />
+            </svg>
+            <input type="text" id="searchFornecedor" placeholder="Buscar fornecedor...">
+        </div>
+    </header>
+
+    <main class="content">
+
+        <div class="table-card">
+            <div class="card-header">
+                <h3>Fornecedores</h3>
+
+                <button class="btn-primary" id="btnNovoFornecedor">
+                    + Novo Fornecedor
+                </button>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CNPJ</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fornecedoresTableBody">
+                        <!-- JS render -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <button class="pagination-btn" disabled>Anterior</button>
+                <span class="pagination-info">Página 1 de 1</span>
+                <button class="pagination-btn" disabled>Próximo</button>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<!-- MODAL: CADASTRO / EDIÇÃO DE FORNECEDOR -->
+<div class="modal" id="fornecedores-modal" aria-hidden="true">
+  <div class="modal-backdrop" onclick="closeFornecedorModal()"></div>
+
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalFornecedorTitle">
+    <header class="modal-header">
+      <h2 id="modalFornecedorTitle">Novo Fornecedor</h2>
+      <button class="modal-close" onclick="closeFornecedorModal()" aria-label="Fechar">&times;</button>
+    </header>
+
+    <form id="form-fornecedores" class="modal-body" onsubmit="event.preventDefault(); saveFornecedor();">
+      <div class="form-row">
+        <label for="forn_nome">Nome</label>
+        <input id="forn_nome" type="text" required />
+      </div>
+
+      <div class="form-row">
+        <label for="forn_cnpj">CNPJ</label>
+        <input id="forn_cnpj" type="text" inputmode="numeric" required />
+      </div>
+
+      <div class="form-row">
+        <label for="forn_telefone">Telefone</label>
+        <input id="forn_telefone" type="tel" />
+      </div>
+
+      <div class="form-row">
+        <label for="forn_email">E-mail</label>
+        <input id="forn_email" type="email" />
+      </div>
+
+      <div class="form-row">
+        <label for="forn_status">Status</label>
+        <select id="forn_status">
+          <option value="Ativo">Ativo</option>
+          <option value="Inativo">Inativo</option>
+        </select>
+      </div>
+
+      <footer class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeFornecedorModal()">Cancelar</button>
+        <button type="submit" class="btn-primary">Salvar</button>
+      </footer>
+    </form>
+  </div>
+</div>
+
+<!-- Toast container (reaproveitar do index) -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="script.js"></script>
+<script src="fornecedores.js"></script>
+
+</body>
+</html>

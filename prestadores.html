@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Relatório de Estoque Crítico — EASYGEST</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prestadores de Serviço - EASYGEST</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Sidebar -->
-  <aside class="sidebar">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
   <div class="sidebar-header">
-      <a href="/" class="logo-link" aria-label="Página inicial EasyGest">
+    <a href="/" class="logo-link" aria-label="Página inicial EasyGest">
       <div class="logo-box">
         <img src="img/logotipo.png" alt="EasyGest" class="logo-img">
-        <span class="logo-text">
-          <span class="easy">Easy</span><span class="gest">Gest</span>
-        </span>
+        <span class="logo-text"><span class="easy">Easy</span><span class="gest">Gest</span></span>
       </div>
     </a>
-    </div>
-    
+  </div>
+
   <nav class="sidebar-nav">
     <a href="index.html" class="nav-item" aria-label="Dashboard">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
@@ -31,21 +31,18 @@
       <span>Dashboard</span>
     </a>
 
-    <a href="relatorios.html" class="nav-item active" aria-label="Relatórios">
+    <a href="relatorios.html" class="nav-item" aria-label="Relatórios">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
         <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
       </svg>
       <span>Relatórios</span>
     </a>
-  
-
     <a href="produtos.html" class="nav-item" aria-label="Produtos">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
         <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
       </svg>
       <span>Produtos</span>
     </a>
-
     <a href="clientes.html" class="nav-item" aria-label="Clientes">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
         <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
@@ -53,7 +50,7 @@
       <span>Clientes</span>
     </a>
 
-    <a href="fornecedores.html" class="nav-item" aria-label="Fornecedores">
+<a href="fornecedores.html" class="nav-item" aria-label="Fornecedores">
   <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
     <path d="M3 3h14v14H3z" />
   </svg>
@@ -73,7 +70,6 @@
       </svg>
       <span>Estoque</span>
     </a>
-
     <a href="financeiro.html" class="nav-item" aria-label="Financeiro">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
         <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
@@ -81,8 +77,6 @@
       </svg>
       <span>Financeiro</span>
     </a>
-
-    <!-- NOVO ITEM: RH -->
     <a href="rh.html" class="nav-item" aria-label="RH">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
         <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
@@ -91,7 +85,6 @@
     </a>
   </nav>
 
-  <!-- Rodapé da Sidebar com Configurações e Avatar -->
   <div class="sidebar-footer">
     <a href="configuracoes.html" class="nav-item" aria-label="Configurações">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
@@ -99,69 +92,123 @@
       </svg>
       <span>Configurações</span>
     </a>
-
     <a href="perfil.html" class="nav-item avatar-item" aria-label="Meu Perfil">
-      <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%238FB3E2'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='Inter, sans-serif' font-size='12' font-weight='600' fill='%231E2E4F'>MP</text></svg>" alt="Avatar do usuário" class="avatar-img" />
+      <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%238FB3E2'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='Inter, sans-serif' font-size='12' font-weight='600' fill='%231E2E4F'>MP</text></svg>" alt="Avatar" class="avatar-img">
       <span>Meu Perfil</span>
     </a>
   </div>
 </aside>
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <!-- Topbar -->
-    <header class="topbar">
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
-      <div class="topbar-title">
-        <a href="relatorios.html" class="back-link">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-            Voltar para Relatórios
-        </a>
-        <h2>Estoque Crítico</h2>
+<!-- MAIN -->
+<div class="main-content">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+
+    <div class="search-box">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/></svg>
+      <input type="text" id="searchPrestador" placeholder="Buscar prestador... (pressione '/')" aria-label="Buscar prestador">
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <div class="table-card">
+      <div class="card-header">
+        <h3>Prestadores de Serviço</h3>
+        <div class="card-actions">
+          <button class="btn-secondary" id="btnExportPrestadores" onclick="showToast('Exportar CSV ainda não implementado')">
+            Exportar CSV
+          </button>
+          <button class="btn-primary" id="btnNovoPrestador" onclick="openPrestadorModal()">
+            + Novo Prestador
+          </button>
+        </div>
       </div>
-      <button class="btn-primary" id="exportPdf">Exportar PDF</button>
+
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Documento</th>
+              <th>Especialidade</th>
+              <th>Telefone</th>
+              <th>E-mail</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="prestadoresTableBody">
+            <!-- renderizado por JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mobile-table-card-view" id="prestadoresMobileView">
+        <!-- mobile cards se necessário -->
+      </div>
+
+      <div class="pagination">
+        <button class="pagination-btn" disabled>Anterior</button>
+        <span class="pagination-info">Página 1 de 1</span>
+        <button class="pagination-btn" disabled>Próximo</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- MODAL: CADASTRO / EDIÇÃO -->
+<div class="modal" id="prestadores-modal" aria-hidden="true">
+  <div class="modal-backdrop" onclick="closePrestadorModal()"></div>
+
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header class="modal-header">
+      <h2 id="modalTitle">Novo Prestador</h2>
+      <button class="modal-close" onclick="closePrestadorModal()" aria-label="Fechar">&times;</button>
     </header>
 
-    <!-- Content -->
-    <main class="content">
-      <!-- KPIs -->
-      <div class="kpi-grid" id="reportKpiGrid">
-        <!-- KPIs serão inseridos via JS -->
+    <form id="form-prestadores" class="modal-body" onsubmit="event.preventDefault(); savePrestador();">
+      <div class="form-row">
+        <label for="prest_nome">Nome</label>
+        <input id="prest_nome" type="text" required />
       </div>
 
-      <!-- Tabela de Dados -->
-      <div class="table-card">
-        <div class="card-header">
-          <h3>Itens com Estoque Baixo</h3>
-        </div>
-        <div class="table-wrapper">
-          <table class="data-table" id="estoqueTable">
-            <thead>
-              <tr>
-                <th>Produto</th>
-                <th>SKU</th>
-                <th>Estoque Atual</th>
-                <th>Estoque Mínimo</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody id="estoqueTableBody">
-              <!-- Dados da tabela serão inseridos via JS -->
-            </tbody>
-          </table>
-        </div>
+      <div class="form-row">
+        <label for="prest_documento">Documento (CPF/CNPJ)</label>
+        <input id="prest_documento" type="text" inputmode="numeric" />
       </div>
-    </main>
+
+      <div class="form-row">
+        <label for="prest_especialidade">Especialidade</label>
+        <input id="prest_especialidade" type="text" />
+      </div>
+
+      <div class="form-row">
+        <label for="prest_telefone">Telefone</label>
+        <input id="prest_telefone" type="tel" />
+      </div>
+
+      <div class="form-row">
+        <label for="prest_email">E-mail</label>
+        <input id="prest_email" type="email" />
+      </div>
+
+      <footer class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closePrestadorModal()">Cancelar</button>
+        <button type="submit" class="btn-primary">Salvar</button>
+      </footer>
+    </form>
   </div>
+</div>
 
-  <!-- Toast -->
-  <div class="toast-container" id="toastContainer"></div>
+<!-- Toast container (reaproveitar do index) -->
+<div class="toast-container" id="toastContainer"></div>
 
-  <!-- Base do portal -->
-  <script src="script.js"></script>
-  <!-- Script específico da página -->
-  <script src="relatorio-estoque.js"></script>
+<!-- SCRIPTS -->
+<script src="script.js"></script> <!-- comportamento global (menu, toasts, etc) -->
+<script src="prestadores.js"></script> <!-- a funcionalidade que você pediu depois -->
 </body>
 </html>
