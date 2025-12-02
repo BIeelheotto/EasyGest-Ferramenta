@@ -57,7 +57,7 @@
   <span>Fornecedores</span>
 </a>
 
-<a href="prestadores.html" class="nav-item" aria-label="Prestadores de Serviço">
+<a href="prestadores.html" class="nav-item active" aria-label="Prestadores de Serviço">
   <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
     <path d="M10 2l8 6-8 6-8-6z" />
   </svg>
@@ -116,20 +116,17 @@
 
   <!-- CONTENT -->
   <main class="content">
+    <div class="toolbar">
+      <h2>Prestadores de Serviço</h2>
+      <button class="btn btn-primary" id="btnNovoPrestador">+ Novo Prestador</button>
+    </div>
+
     <div class="table-card">
       <div class="card-header">
-        <h3>Prestadores de Serviço</h3>
-        <div class="card-actions">
-          <button class="btn-secondary" id="btnExportPrestadores" onclick="showToast('Exportar CSV ainda não implementado')">
-            Exportar CSV
-          </button>
-          <button class="btn-primary" id="btnNovoPrestador" onclick="openPrestadorModal()">
-            + Novo Prestador
-          </button>
-        </div>
+        <h3>Lista de Prestadores</h3>
       </div>
 
-      <div class="table-wrapper">
+      <div class="table-wrapper" id="desktopTableWrapper">
         <table class="data-table">
           <thead>
             <tr>
@@ -138,6 +135,7 @@
               <th>Especialidade</th>
               <th>Telefone</th>
               <th>E-mail</th>
+              <th>Status</th>
               <th>Ações</th>
             </tr>
           </thead>
@@ -147,8 +145,8 @@
         </table>
       </div>
 
-      <div class="mobile-table-card-view" id="prestadoresMobileView">
-        <!-- mobile cards se necessário -->
+      <div class="mobile-cards" id="prestadoresMobileView">
+        <!-- mobile cards renderizado por JS -->
       </div>
 
       <div class="pagination">
@@ -161,45 +159,246 @@
 </div>
 
 <!-- MODAL: CADASTRO / EDIÇÃO -->
-<div class="modal" id="prestadores-modal" aria-hidden="true">
-  <div class="modal-backdrop" onclick="closePrestadorModal()"></div>
-
-  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <header class="modal-header">
-      <h2 id="modalTitle">Novo Prestador</h2>
-      <button class="modal-close" onclick="closePrestadorModal()" aria-label="Fechar">&times;</button>
-    </header>
-
-    <form id="form-prestadores" class="modal-body" onsubmit="event.preventDefault(); savePrestador();">
-      <div class="form-row">
-        <label for="prest_nome">Nome</label>
-        <input id="prest_nome" type="text" required />
+<div id="prestadores-modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="modalPrestadorTitle">Novo Prestador</h2>
+      <button class="btn btn-danger" onclick="closePrestadorModal()">X</button>
+    </div>
+    <form id="form-prestadores" onsubmit="event.preventDefault(); savePrestador();">
+      
+      <div class="table-card">
+        <div class="card-header">
+          <h3>Dados Básicos</h3>
+        </div>
+        <div class="form-grid">
+          <div>
+            <label>Nome/Razão Social *</label>
+            <input type="text" id="prest_nome" required />
+          </div>
+          <div>
+            <label>Nome Fantasia</label>
+            <input type="text" id="prest_nomeFantasia" />
+          </div>
+          <div>
+            <label>Documento (CPF/CNPJ) *</label>
+            <input type="text" id="prest_documento" required />
+          </div>
+          <div>
+            <label>Inscrição Estadual</label>
+            <input type="text" id="prest_inscricaoEstadual" />
+          </div>
+          <div>
+            <label>Inscrição Municipal</label>
+            <input type="text" id="prest_inscricaoMunicipal" />
+          </div>
+          <div>
+            <label>Tipo de Pessoa *</label>
+            <select id="prest_tipoPessoa" required>
+              <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+              <option value="Pessoa Física">Pessoa Física</option>
+            </select>
+          </div>
+        </div>
       </div>
 
-      <div class="form-row">
-        <label for="prest_documento">Documento (CPF/CNPJ)</label>
-        <input id="prest_documento" type="text" inputmode="numeric" />
+      <div class="table-card">
+        <div class="card-header">
+          <h3>Contato</h3>
+        </div>
+        <div class="form-grid">
+          <div>
+            <label>Telefone Comercial</label>
+            <input type="text" id="prest_telefone" />
+          </div>
+          <div>
+            <label>Celular</label>
+            <input type="text" id="prest_celular" />
+          </div>
+          <div>
+            <label>E-mail Principal</label>
+            <input type="email" id="prest_email" />
+          </div>
+          <div>
+            <label>E-mail Financeiro</label>
+            <input type="email" id="prest_emailFinanceiro" />
+          </div>
+          <div>
+            <label>Website</label>
+            <input type="text" id="prest_website" />
+          </div>
+        </div>
       </div>
 
-      <div class="form-row">
-        <label for="prest_especialidade">Especialidade</label>
-        <input id="prest_especialidade" type="text" />
+      <div class="table-card">
+        <div class="card-header">
+          <h3>Endereço</h3>
+        </div>
+        <div class="form-grid">
+          <div>
+            <label>CEP</label>
+            <input type="text" id="prest_cep" />
+          </div>
+          <div>
+            <label>Logradouro</label>
+            <input type="text" id="prest_logradouro" />
+          </div>
+          <div>
+            <label>Número</label>
+            <input type="text" id="prest_numero" />
+          </div>
+          <div>
+            <label>Complemento</label>
+            <input type="text" id="prest_complemento" />
+          </div>
+          <div>
+            <label>Bairro</label>
+            <input type="text" id="prest_bairro" />
+          </div>
+          <div>
+            <label>Cidade</label>
+            <input type="text" id="prest_cidade" />
+          </div>
+          <div>
+            <label>Estado</label>
+            <select id="prest_estado">
+              <option value="">-- Selecione --</option>
+              <option value="AC">AC</option>
+              <option value="AL">AL</option>
+              <option value="AP">AP</option>
+              <option value="AM">AM</option>
+              <option value="BA">BA</option>
+              <option value="CE">CE</option>
+              <option value="DF">DF</option>
+              <option value="ES">ES</option>
+              <option value="GO">GO</option>
+              <option value="MA">MA</option>
+              <option value="MT">MT</option>
+              <option value="MS">MS</option>
+              <option value="MG">MG</option>
+              <option value="PA">PA</option>
+              <option value="PB">PB</option>
+              <option value="PR">PR</option>
+              <option value="PE">PE</option>
+              <option value="PI">PI</option>
+              <option value="RJ">RJ</option>
+              <option value="RN">RN</option>
+              <option value="RS">RS</option>
+              <option value="RO">RO</option>
+              <option value="RR">RR</option>
+              <option value="SC">SC</option>
+              <option value="SP">SP</option>
+              <option value="SE">SE</option>
+              <option value="TO">TO</option>
+            </select>
+          </div>
+        </div>
       </div>
 
-      <div class="form-row">
-        <label for="prest_telefone">Telefone</label>
-        <input id="prest_telefone" type="tel" />
+      <div class="table-card">
+        <div class="card-header">
+          <h3>Dados Bancários</h3>
+        </div>
+        <div class="form-grid">
+          <div>
+            <label>Banco</label>
+            <select id="prest_banco">
+              <option value="">-- Selecione --</option>
+              <option value="001">Banco do Brasil</option>
+              <option value="104">Caixa Econômica</option>
+              <option value="237">Bradesco</option>
+              <option value="341">Itaú</option>
+              <option value="033">Santander</option>
+            </select>
+          </div>
+          <div>
+            <label>Agência</label>
+            <input type="text" id="prest_agencia" />
+          </div>
+          <div>
+            <label>Conta</label>
+            <input type="text" id="prest_conta" />
+          </div>
+          <div>
+            <label>Tipo de Conta</label>
+            <select id="prest_tipoConta">
+              <option value="Corrente">Corrente</option>
+              <option value="Poupança">Poupança</option>
+            </select>
+          </div>
+          <div>
+            <label>Titular da Conta</label>
+            <input type="text" id="prest_titularConta" />
+          </div>
+        </div>
       </div>
 
-      <div class="form-row">
-        <label for="prest_email">E-mail</label>
-        <input id="prest_email" type="email" />
+      <div class="table-card">
+        <div class="card-header">
+          <h3>Informações Fiscais</h3>
+        </div>
+        <div class="form-grid">
+          <div>
+            <label>Especialidade / Código do Serviço (LC 116)</label>
+            <input type="text" id="prest_codigoServico" />
+          </div>
+          <div>
+            <label>Regime Tributário</label>
+            <select id="prest_regimeTributario">
+              <option value="">-- Selecione --</option>
+              <option value="Simples Nacional">Simples Nacional</option>
+              <option value="Lucro Real">Lucro Real</option>
+              <option value="Lucro Presumido">Lucro Presumido</option>
+            </select>
+          </div>
+          <div>
+            <label>CNAE Principal</label>
+            <input type="text" id="prest_cnaePrincipal" />
+          </div>
+          <div>
+            <label>Natureza do Prestador</label>
+            <select id="prest_naturezaPrestador">
+              <option value="">-- Selecione --</option>
+              <option value="Pessoa Física">Pessoa Física</option>
+              <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+              <option value="Ambos">Ambos</option>
+            </select>
+          </div>
+        </div>
       </div>
 
-      <footer class="modal-footer">
-        <button type="button" class="btn-secondary" onclick="closePrestadorModal()">Cancelar</button>
-        <button type="submit" class="btn-primary">Salvar</button>
-      </footer>
+      <div class="table-card">
+        <div class="card-header">
+          <h3>Classificação e Controle</h3>
+        </div>
+        <div class="form-grid">
+          <div>
+            <label>Categoria</label>
+            <select id="prest_categoria">
+              <option value="">-- Selecione --</option>
+              <option value="Consultoria">Consultoria</option>
+              <option value="Tecnologia">Tecnologia</option>
+              <option value="Manutenção">Manutenção</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Outros">Outros</option>
+            </select>
+          </div>
+          <div>
+            <label>Status</label>
+            <select id="prest_status">
+              <option value="Ativo">Ativo</option>
+              <option value="Inativo">Inativo</option>
+            </select>
+          </div>
+        </div>
+        <label>Observações</label>
+        <textarea id="prest_observacoes" rows="3"></textarea>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" onclick="closePrestadorModal()">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </div>
     </form>
   </div>
 </div>
@@ -208,7 +407,11 @@
 <div class="toast-container" id="toastContainer"></div>
 
 <!-- SCRIPTS -->
-<script src="script.js"></script> <!-- comportamento global (menu, toasts, etc) -->
-<script src="prestadores.js"></script> <!-- a funcionalidade que você pediu depois -->
+<script src="https://cdn.jsdelivr.net/npm/imask@6.4.3/dist/imask.min.js"></script>
+<script src="script.js"></script> 
+<script src="prestadores.js"></script> 
+<script>
+  // IMask initialization will be done in prestadores.js for consistency
+</script>
 </body>
 </html>
