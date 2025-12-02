@@ -638,8 +638,6 @@ function highlightCurrentNavItem() {
 }
 
 function init() {
-  // Delay initialization to ensure DOM is fully loaded
-  setTimeout(() => {
     if(document.getElementById('kpiGrid')) {
       renderKPIs();
     }
@@ -660,7 +658,6 @@ function init() {
     }
     highlightCurrentNavItem(); // Highlight the current navigation item
     bindInteractions();
-  }, 100);
 }
 
 // Start the app when DOM is ready
