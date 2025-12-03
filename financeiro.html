@@ -1,126 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Financeiro — EASYGEST</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <!-- Sidebar -->
   <aside class="sidebar">
-  <div class="sidebar-header">
-      <a href="/" class="logo-link" aria-label="Página inicial EasyGest">
-      <div class="logo-box">
-        <img src="img/logotipo.png" alt="EasyGest" class="logo-img">
-        <span class="logo-text">
-          <span class="easy">Easy</span><span class="gest">Gest</span>
-        </span>
-      </div>
-    </a>
+    <div class="sidebar-header">
+      <a href="/" class="logo-link">
+        <div class="logo-box">
+          <img src="img/logotipo.png" alt="EasyGest" class="logo-img">
+          <span class="logo-text">EasyGest</span>
+        </div>
+      </a>
     </div>
-    
-  <nav class="sidebar-nav">
-    <a href="index.html" class="nav-item" aria-label="Dashboard">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-      </svg>
-      <span>Dashboard</span>
-    </a>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item"><svg width="20" height="20" fill="currentColor"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/></svg><span>Dashboard</span></a>
+      <a href="relatorios.html" class="nav-item"><svg width="20" height="20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg><span>Relatórios</span></a>
+      <a href="produtos.html" class="nav-item"><svg width="20" height="20" fill="currentColor"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg><span>Produtos</span></a>
+      <a href="clientes.html" class="nav-item"><svg width="20" height="20" fill="currentColor"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg><span>Clientes</span></a>
+      <a href="fornecedores.html" class="nav-item"><svg width="20" height="20" fill="currentColor"><path d="M3 3h14v14H3z"/></svg><span>Fornecedores</span></a>
+      <a href="prestadores.html" class="nav-item"><svg width="20" height="20" fill="currentColor"><path d="M10 2l8 6-8 6-8-6z"/></svg><span>Prestadores</span></a>
+      <a href="estoque.html" class="nav-item"><svg width="20" height="20" fill="currentColor"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM13 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2z"/></svg><span>Estoque</span></a>
+      <a href="financeiro.html" class="nav-item active"><svg width="20" height="20" fill="currentColor"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/></svg><span>Financeiro</span></a>
+      <a href="rh.html" class="nav-item"><svg width="20" height="20" fill="currentColor"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/></svg><span>RH</span></a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="configuracoes.html" class="nav-item"><svg width="20" height="20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg><span>Configurações</span></a>
+      <a href="perfil.html" class="nav-item avatar-item"><img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%238FB3E2'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='Inter' font-size='12' font-weight='600' fill='%231E2E4F'>MP</text></svg>" alt="Avatar" class="avatar-img"><span>Meu Perfil</span></a>
+    </div>
+  </aside>
 
-    <a href="relatorios.html" class="nav-item" aria-label="Relatórios">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
-      </svg>
-      <span>Relatórios</span>
-    </a>
-  
-
-    <a href="produtos.html" class="nav-item" aria-label="Produtos">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
-      </svg>
-      <span>Produtos</span>
-    </a>
-
-    <a href="clientes.html" class="nav-item" aria-label="Clientes">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
-      </svg>
-      <span>Clientes</span>
-    </a>
-
-    <a href="fornecedores.html" class="nav-item" aria-label="Fornecedores">
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-    <path d="M3 3h14v14H3z" />
-  </svg>
-  <span>Fornecedores</span>
-</a>
-
-<a href="prestadores.html" class="nav-item" aria-label="Prestadores de Serviço">
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-    <path d="M10 2l8 6-8 6-8-6z" />
-  </svg>
-  <span>Prestadores</span>
-</a>
-
-    <a href="estoque.html" class="nav-item" aria-label="Estoque">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM13 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2z"/>
-      </svg>
-      <span>Estoque</span>
-    </a>
-
-    <a href="financeiro.html" class="nav-item active" aria-label="Financeiro">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
-        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
-      </svg>
-      <span>Financeiro</span>
-    </a>
-
-    <!-- NOVO ITEM: RH -->
-    <a href="rh.html" class="nav-item" aria-label="RH">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
-      </svg>
-      <span>RH</span>
-    </a>
-  </nav>
-
-  <!-- Rodapé da Sidebar com Configurações e Avatar -->
-  <div class="sidebar-footer">
-    <a href="configuracoes.html" class="nav-item" aria-label="Configurações">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
-      </svg>
-      <span>Configurações</span>
-    </a>
-
-    <a href="perfil.html" class="nav-item avatar-item" aria-label="Meu Perfil">
-      <img src="data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%238FB3E2'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='Inter, sans-serif' font-size='12' font-weight='600' fill='%231E2E4F'>MP</text></svg>" alt="Avatar do usuário" class="avatar-img" />
-      <span>Meu Perfil</span>
-    </a>
-  </div>
-</aside>
-
-  <!-- Main Content -->
   <div class="main-content">
-    <!-- Topbar -->
     <header class="topbar">
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
+      <button class="menu-toggle" id="menuToggle"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       <div class="search-box">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
-        </svg>
-        <input type="text" id="searchInput" placeholder="Buscar transação... (pressione '/')" aria-label="Buscar transação">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg>
+        <input type="text" id="searchInput" placeholder="Buscar... (/)">
       </div>
       <div class="period-selector">
         <button class="period-btn active" data-period="today">Hoje</button>
@@ -128,131 +51,147 @@
         <button class="period-btn" data-period="30d">30 dias</button>
         <button class="period-btn" data-period="custom">Personalizado</button>
       </div>
+      <button class="btn btn-primary" id="openModalBtn"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" /></svg>Nova Transação</button>
     </header>
 
-    <!-- Content -->
     <main class="content">
-      <!-- Summary Cards -->
-      <div class="summary-grid">
-        <div class="summary-card">
-          <div class="summary-label">A Receber</div>
-          <div class="summary-value" id="totalReceber">R$ 0,00</div>
-        </div>
-        <div class="summary-card">
-          <div class="summary-label">A Pagar</div>
-          <div class="summary-value" id="totalPagar">R$ 0,00</div>
-        </div>
-        <div class="summary-card">
-          <div class="summary-label">Recebido</div>
-          <div class="summary-value positive" id="totalRecebido">R$ 0,00</div>
-        </div>
-        <div class="summary-card">
-          <div class="summary-label">Pago</div>
-          <div class="summary-value negative" id="totalPago">R$ 0,00</div>
-        </div>
-        <div class="summary-card">
-          <div class="summary-label">Saldo</div>
-          <div class="summary-value" id="saldo">R$ 0,00</div>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="contasPagar">Contas a Pagar</button>
+        <button class="tab-btn" data-tab="contasReceber">Contas a Receber</button>
+        <button class="tab-btn" data-tab="conciliacao">Conciliação</button>
+        <button class="tab-btn" data-tab="fluxoCaixa">Fluxo de Caixa</button>
+        <button class="tab-btn" data-tab="relatorios">Relatórios</button>
+      </div>
+
+      <div id="contasPagar" class="tab-content active">
+        <div class="table-card">
+          <div class="card-header">
+            <h3>Contas a Pagar</h3>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Fornecedor</th>
+                  <th>NF-e</th>
+                  <th>Vencimento</th>
+                  <th>Valor</th>
+                  <th>Centro de Custo</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
         </div>
       </div>
 
-      <!-- Tabela de Transações -->
-      <div class="table-card">
-        <div class="card-header">
-          <h3>Transações Financeiras</h3>
-          <button class="btn-secondary" id="openModalBtn" aria-haspopup="dialog">
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0V11H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"/>
-            </svg>
-            Nova Transação
-          </button>
-        </div>
-
-        <!-- Filtros -->
-        <div class="filter-bar">
-          <div class="filter-group">
-            <label class="filter-label" for="tipoFilter">Tipo:</label>
-            <select class="filter-select" id="tipoFilter">
-              <option value="Todos">Todos</option>
-              <option value="Receita">Receita</option>
-              <option value="Despesa">Despesa</option>
-            </select>
+      <div id="contasReceber" class="tab-content">
+        <div class="table-card">
+          <div class="card-header">
+            <h3>Contas a Receber</h3>
           </div>
-          <div class="filter-group">
-            <label class="filter-label" for="statusFilter">Status:</label>
-            <select class="filter-select" id="statusFilter">
-              <option value="Todos">Todos</option>
-              <option value="Pendente">Pendente</option>
-              <option value="Pago">Pago</option>
-            </select>
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Cliente</th>
+                  <th>NF-e</th>
+                  <th>Vencimento</th>
+                  <th>Valor</th>
+                  <th>Status</th>
+                  <th>Atraso</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
           </div>
         </div>
+      </div>
 
-        <div class="table-wrapper">
-          <table class="data-table" aria-label="Lista de transações">
-            <thead>
-              <tr>
-                <th>Data</th>
-                <th>Descrição</th>
-                <th>Tipo</th>
-                <th>Valor</th>
-                <th>Status</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody id="transacoesTableBody">
-              <!-- linhas serão inseridas via script -->
-            </tbody>
-          </table>
+      <div id="conciliacao" class="tab-content">
+        <div class="table-card">
+          <div class="card-header">
+            <h3>Conciliação Bancária</h3>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Descrição</th>
+                  <th>Valor Extrato</th>
+                  <th>Valor Sistema</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
         </div>
+      </div>
 
-        <div class="pagination">
-          <button class="pagination-btn" disabled>Anterior</button>
-          <span class="pagination-info">Página 1 de 1</span>
-          <button class="pagination-btn" disabled>Próximo</button>
+      <div id="fluxoCaixa" class="tab-content">
+        <div class="summary-card">
+          <canvas id="cashFlowSimulationChart"></canvas>
+        </div>
+      </div>
+
+      <div id="relatorios" class="tab-content">
+        <div class="summary-grid">
+          <div class="summary-card">
+            <h3>DRE Mensal</h3>
+            <button class="btn btn-secondary">Exportar</button>
+          </div>
+          <div class="summary-card">
+            <h3>Balanço Patrimonial</h3>
+            <button class="btn btn-secondary">Exportar</button>
+          </div>
+          <div class="summary-card">
+            <h3>Inadimplência</h3>
+            <button class="btn btn-secondary">Exportar</button>
+          </div>
         </div>
       </div>
     </main>
   </div>
 
-  <!-- Toast -->
   <div class="toast-container" id="toastContainer"></div>
 
-  <!-- Modal Nova/Editar Transação -->
   <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal">
       <div class="modal-header">
-        <span class="modal-title" id="modalTitle">Nova transação</span>
-        <button class="btn-secondary" id="closeModalBtn" aria-label="Fechar">✕</button>
+        <span id="modalTitle" class="modal-title">Nova Transação</span>
+        <button class="btn-secondary" id="closeModalBtn">✕</button>
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <label class="form-label" for="descricaoInput">Descrição</label>
-          <input class="form-input" id="descricaoInput" type="text" placeholder="Ex.: Venda de produtos" />
+          <label for="descricaoInput" class="form-label">Descrição</label>
+          <input class="form-input" id="descricaoInput" type="text" placeholder="Ex.: Venda de produtos">
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label" for="tipoSelect">Tipo</label>
+            <label for="tipoSelect" class="form-label">Tipo</label>
             <select class="form-select" id="tipoSelect">
-              <option value="Receita">Receita</option>
-              <option value="Despesa">Despesa</option>
+              <option>Receita</option>
+              <option>Despesa</option>
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label" for="valorInput">Valor</label>
-            <input class="form-input" id="valorInput" type="number" step="0.01" placeholder="0,00" />
+            <label for="valorInput" class="form-label">Valor</label>
+            <input class="form-input" id="valorInput" type="number" step="0.01" placeholder="0,00">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label" for="dataInput">Data</label>
-            <input class="form-input" id="dataInput" type="date" />
+            <label for="dataInput" class="form-label">Data</label>
+            <input class="form-input" id="dataInput" type="date">
           </div>
           <div class="form-group">
-            <label class="form-label" for="statusSelect">Status</label>
+            <label for="statusSelect" class="form-label">Status</label>
             <select class="form-select" id="statusSelect">
-              <option value="Pendente">Pendente</option>
-              <option value="Pago">Pago</option>
+              <option>Pendente</option>
+              <option>Pago</option>
             </select>
           </div>
         </div>
@@ -264,208 +203,9 @@
     </div>
   </div>
 
-  <!-- Chart.js (mantendo padrão do portal) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <!-- Base do portal (toasts, atalho '/', toggle menu, etc.) -->
   <script src="script.js"></script>
-
-  <!-- Script específico da página Financeiro -->
-  <script>
-    // Mock de dados de transações
-    const transacoes = [
-      { id: 1, data: '2025-01-15', descricao: 'Venda de produtos', tipo: 'Receita', valor: 2500.00, status: 'Pago' },
-      { id: 2, data: '2025-01-18', descricao: 'Aluguel', tipo: 'Despesa', valor: 1200.00, status: 'Pago' },
-      { id: 3, data: '2025-01-20', descricao: 'Serviços prestados', tipo: 'Receita', valor: 3800.00, status: 'Pendente' },
-      { id: 4, data: '2025-01-22', descricao: 'Fornecedor A', tipo: 'Despesa', valor: 850.00, status: 'Pendente' },
-      { id: 5, data: '2025-01-25', descricao: 'Venda online', tipo: 'Receita', valor: 1450.00, status: 'Pago' },
-      { id: 6, data: '2025-01-27', descricao: 'Energia elétrica', tipo: 'Despesa', valor: 320.00, status: 'Pendente' },
-      { id: 7, data: '2025-01-28', descricao: 'Consultoria', tipo: 'Receita', valor: 5000.00, status: 'Pendente' }
-    ];
-
-    let editingId = null; // ID da transação sendo editada
-
-    // Calcular totais
-    function calcularTotais() {
-      let receber = 0, pagar = 0, recebido = 0, pago = 0;
-
-      transacoes.forEach(t => {
-        if (t.tipo === 'Receita') {
-          if (t.status === 'Pago') recebido += t.valor;
-          else receber += t.valor;
-        } else {
-          if (t.status === 'Pago') pago += t.valor;
-          else pagar += t.valor;
-        }
-      });
-
-      const saldo = recebido - pago;
-
-      document.getElementById('totalReceber').textContent = formatCurrency(receber);
-      document.getElementById('totalPagar').textContent = formatCurrency(pagar);
-      document.getElementById('totalRecebido').textContent = formatCurrency(recebido);
-      document.getElementById('totalPago').textContent = formatCurrency(pago);
-      
-      const saldoEl = document.getElementById('saldo');
-      saldoEl.textContent = formatCurrency(Math.abs(saldo));
-      saldoEl.className = 'summary-value ' + (saldo >= 0 ? 'positive' : 'negative');
-    }
-
-    // Renderizar tabela
-    function renderTransacoes() {
-      const tbody = document.getElementById('transacoesTableBody');
-      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-      const tipoFilter = document.getElementById('tipoFilter').value;
-      const statusFilter = document.getElementById('statusFilter').value;
-      
-      let filtered = transacoes.filter(t => 
-        t.descricao.toLowerCase().includes(searchTerm)
-      );
-
-      if (tipoFilter !== 'Todos') {
-        filtered = filtered.filter(t => t.tipo === tipoFilter);
-      }
-
-      if (statusFilter !== 'Todos') {
-        filtered = filtered.filter(t => t.status === statusFilter);
-      }
-
-      tbody.innerHTML = filtered.map(t => {
-        const tipoClass = t.tipo === 'Receita' ? 'success' : 'danger';
-        const statusClass = t.status === 'Pago' ? 'success' : 'warning';
-        const dataFormatada = new Date(t.data + 'T00:00:00').toLocaleDateString('pt-BR');
-        
-        return `
-          <tr>
-            <td>${dataFormatada}</td>
-            <td><strong>${t.descricao}</strong></td>
-            <td><span class="chip ${tipoClass}">${t.tipo}</span></td>
-            <td>${formatCurrency(t.valor)}</td>
-            <td><span class="chip ${statusClass}">${t.status}</span></td>
-            <td>
-              <div class="action-buttons">
-                ${t.status === 'Pendente' 
-                  ? `<button class="btn-action btn-success" onclick="marcarPago(${t.id})">Pagar</button>`
-                  : ''
-                }
-                <button class="btn-action btn-outline" onclick="editarTransacao(${t.id})">Editar</button>
-                <button class="btn-action btn-primary" onclick="excluirTransacao(${t.id})">Excluir</button>
-              </div>
-            </td>
-          </tr>
-        `;
-      }).join('');
-
-      calcularTotais();
-    }
-
-    // Marcar como pago
-    function marcarPago(id) {
-      const transacao = transacoes.find(t => t.id === id);
-      transacao.status = 'Pago';
-      renderTransacoes();
-      showToast('Transação marcada como paga!');
-    }
-
-    // Editar transação
-    function editarTransacao(id) {
-      editingId = id;
-      const transacao = transacoes.find(t => t.id === id);
-      
-      document.getElementById('modalTitle').textContent = 'Editar transação';
-      document.getElementById('descricaoInput').value = transacao.descricao;
-      document.getElementById('tipoSelect').value = transacao.tipo;
-      document.getElementById('valorInput').value = transacao.valor;
-      document.getElementById('dataInput').value = transacao.data;
-      document.getElementById('statusSelect').value = transacao.status;
-      
-      openModal();
-    }
-
-    // Excluir transação
-    function excluirTransacao(id) {
-      const idx = transacoes.findIndex(t => t.id === id);
-      if (idx >= 0) {
-        transacoes.splice(idx, 1);
-        renderTransacoes();
-        showToast('Transação excluída!');
-      }
-    }
-
-    // Modal handlers
-    const modal = document.getElementById('modalOverlay');
-    const openBtn = document.getElementById('openModalBtn');
-    const closeBtn = document.getElementById('closeModalBtn');
-    const cancelBtn = document.getElementById('cancelModalBtn');
-    const saveBtn = document.getElementById('saveTransacaoBtn');
-
-    function openModal() {
-      modal.style.display = 'flex';
-      document.getElementById('descricaoInput').focus();
-    }
-
-    function closeModal() {
-      modal.style.display = 'none';
-      editingId = null;
-      // Limpar form
-      document.getElementById('modalTitle').textContent = 'Nova transação';
-      document.getElementById('descricaoInput').value = '';
-      document.getElementById('tipoSelect').value = 'Receita';
-      document.getElementById('valorInput').value = '';
-      document.getElementById('dataInput').value = '';
-      document.getElementById('statusSelect').value = 'Pendente';
-    }
-
-    openBtn.addEventListener('click', openModal);
-    closeBtn.addEventListener('click', closeModal);
-    cancelBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-
-    // Salvar transação
-    saveBtn.addEventListener('click', () => {
-      const descricao = document.getElementById('descricaoInput').value.trim();
-      const tipo = document.getElementById('tipoSelect').value;
-      const valor = parseFloat(document.getElementById('valorInput').value || '0');
-      const data = document.getElementById('dataInput').value;
-      const status = document.getElementById('statusSelect').value;
-
-      if (!descricao || valor <= 0 || !data) {
-        showToast('Preencha todos os campos corretamente.', 'error');
-        return;
-      }
-
-      if (editingId) {
-        // Editar existente
-        const transacao = transacoes.find(t => t.id === editingId);
-        transacao.descricao = descricao;
-        transacao.tipo = tipo;
-        transacao.valor = valor;
-        transacao.data = data;
-        transacao.status = status;
-        showToast('Transação atualizada!');
-      } else {
-        // Adicionar nova
-        const newId = Math.max(...transacoes.map(t => t.id), 0) + 1;
-        transacoes.push({ id: newId, descricao, tipo, valor, data, status });
-        showToast('Transação adicionada com sucesso!');
-      }
-
-      renderTransacoes();
-      closeModal();
-    });
-
-    // Busca e filtros em tempo real
-    document.getElementById('searchInput').addEventListener('input', renderTransacoes);
-    document.getElementById('tipoFilter').addEventListener('change', renderTransacoes);
-    document.getElementById('statusFilter').addEventListener('change', renderTransacoes);
-
-    // Inicialização
-    (function initFinanceiro() {
-      // Definir data de hoje como padrão
-      const hoje = new Date().toISOString().split('T')[0];
-      document.getElementById('dataInput').value = hoje;
-      
-      renderTransacoes();
-    })();
-  </script>
+ <script src="financeiro.js" defer></script>
 </body>
+
 </html>

@@ -119,51 +119,63 @@
     </header>
 
     <main class="content">
-      <section class="card" style="max-width: 680px;">
-        <h2>Dados Pessoais</h2>
-        <form id="perfilForm" class="form-grid">
-          <div class="field">
-            <label>Nome completo</label>
-            <input type="text" id="nome" required>
-          </div>
-          <div class="field">
-            <label>E-mail corporativo</label>
-            <input type="email" id="email" readonly>
-          </div>
-          <div class="field">
-            <label>Cargo / Função</label>
-            <input type="text" id="cargo" readonly>
-          </div>
-          <div class="field">
-            <label>Último acesso</label>
-            <input type="text" id="ultimoAcesso" readonly>
-          </div>
-          <div class="field" style="grid-column: 1/-1;">
-            <label>Avatar (URL)</label>
-            <input type="url" id="avatar" placeholder="https://...">
-          </div>
-          <div class="actions" style="grid-column: 1/-1; text-align:right;">
+      <div class="page-header">
+        <h1>Meu Perfil</h1>
+      </div>
+
+      <section class="card profile-card">
+        <div class="card-header">
+            <h2>Dados Pessoais</h2>
+        </div>
+        <div class="card-body">
+            <form id="perfilForm" class="form-grid">
+              <div class="field">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" required>
+              </div>
+              <div class="field">
+                <label for="email">E-mail corporativo</label>
+                <input type="email" id="email" readonly>
+              </div>
+              <div class="field">
+                <label for="cargo">Cargo / Função</label>
+                <input type="text" id="cargo" readonly>
+              </div>
+              <div class="field">
+                <label for="ultimoAcesso">Último acesso</label>
+                <input type="text" id="ultimoAcesso" readonly>
+              </div>
+              <div class="field field-full-width">
+                <label for="avatar">Avatar (URL)</label>
+                <input type="url" id="avatar" placeholder="https://exemplo.com/avatar.png">
+              </div>
+            </form>
+        </div>
+        <div class="card-footer">
             <button type="button" class="btn-outline" onclick="history.back()">Cancelar</button>
-            <button type="submit" class="btn-primary">Salvar</button>
-          </div>
-        </form>
+            <button type="submit" form="perfilForm" class="btn-primary">Salvar Alterações</button>
+        </div>
       </section>
 
-      <section class="card" style="max-width: 680px; margin-top: 24px;">
-        <h2>Segurança</h2>
-        <div class="list-item">
-          <div>
-            <div class="list-item-title">Senha</div>
-            <div class="list-item-meta">Alterada há 45 dias</div>
-          </div>
-          <button class="btn-action btn-outline" onclick="abrirModalSenha()">Alterar</button>
+      <section class="card profile-card">
+        <div class="card-header">
+            <h2>Segurança</h2>
         </div>
-        <div class="list-item">
-          <div>
-            <div class="list-item-title">Autenticação em dois fatores (2FA)</div>
-            <div class="list-item-meta">Desativado</div>
-          </div>
-          <button class="btn-action btn-outline" onclick="ativar2FA()">Ativar</button>
+        <div class="card-body">
+            <div class="list-item">
+              <div>
+                <div class="list-item-title">Senha</div>
+                <div class="list-item-meta">Recomendamos alterar sua senha a cada 90 dias.</div>
+              </div>
+              <button class="btn btn-outline" onclick="abrirModalSenha()">Alterar</button>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="list-item-title">Autenticação em dois fatores (2FA)</div>
+                <div class="list-item-meta">Aumente a segurança da sua conta ativando o 2FA.</div>
+              </div>
+              <button class="btn btn-outline" onclick="ativar2FA()">Ativar</button>
+            </div>
         </div>
       </section>
     </main>
@@ -197,10 +209,10 @@
     // Mock do usuário logado (substituir por JWT / API)
     const usuario = {
       id: 1,
-      nome: "Igor Orlando",
-      email: "igor@easygest.com.br",
-      cargo: "Administrador",
-      ultimoAcesso: "02/12/2025 08:14",
+      nome: "Gabriel victor",
+      email: "gabriel@easygest.com.br",
+      cargo: "Gerente tecnco",
+      ultimoAcesso: "03/12/2025 08:14",
       avatar: ""
     };
 
